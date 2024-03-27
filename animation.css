@@ -1,0 +1,99 @@
+.hrhead{
+    transform: scaleX(0); /* Initially scale it down to 0 */
+    transform-origin: left; /* Set the transformation origin to the left */
+    animation: slideInRightsmooth 1.8s ease-in-out forwards;
+}
+
+.header{
+    opacity: 0;
+    /* Start with 0 opacity */
+    animation: fadeIn 2.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+
+.bgImage::before {
+    opacity: 0;
+    transform: translateX(-55%); /* Start position outside the screen */
+    animation: slideInRight 0.8s ease-in-out forwards, fadeIn 0.8s ease forwards;
+}
+
+
+.dhead {
+    /* position: fixed; */
+    /* left: -70%; */
+    visibility: hidden;
+    transform: translateX(-83%);
+    animation: slideInRightVisible 0.85s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.bodybtn {
+    opacity: 0;
+    /* Start with 0 opacity */
+    animation: fadeIn 1.9s ease forwards;
+    animation-delay: 1.3s;
+    /* Use the fadeIn animation */
+}
+
+.donerAni{
+    opacity: 0;
+    transform: translateX(55%); /* Start position outside the screen */
+    animation: slideInRight 0.8s ease-in-out forwards, fadeIn 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.donerAni2::before{
+    opacity: 0;
+    transform: translateX(-55%); /* Start position outside the screen */
+    animation: slideInRight 0.8s ease-in-out forwards, fadeIn 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.appointAni{
+    opacity: 0;
+    transform: translateX(65%); /* Start position outside the screen */
+    animation: slideInRight 0.8s ease-in-out forwards, fadeIn 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.appointAni2::before{
+    opacity: 0;
+    transform: translateX(-55%); /* Start position outside the screen */
+    animation: slideInRight 0.8s ease-in-out forwards, fadeIn 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        /* Gradually increase opacity to 1 at the end of the animation */
+    }
+}
+
+@keyframes slideInRightsmooth {
+    to {
+        transform: scaleX(1); /* Scale it back to its original width */
+    }
+}
+
+@keyframes slideInRightVisible {
+    to {
+        visibility: visible;
+        transform: translateX(0); /* Slide in to the original position */
+    }
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+        /* Slide it in by setting left to 0 at the end of the animation */
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0); /* Slide in to the original position */
+    }
+}
